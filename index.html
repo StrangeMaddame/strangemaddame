@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strange Maddame · Moda Andrea</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:     #0e0b0b;
+  --bg2:    #141010;
+  --bg3:    #1c1717;
+  --cream:  #f5ede4;
+  --rose:   #c4736a;
+  --gold:   #c9a96e;
+  --blush:  #e8c4b8;
+  --nude:   #d4a98a;
+  --navy:   #0f1e3a;
+  --smoke:  #7a6e6e;
+  --border: rgba(255,255,255,0.07);
+  --glow:   rgba(196,115,106,0.15);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { background:var(--bg); color:var(--cream); font-family:'Raleway',sans-serif; font-weight:300; overflow-x:hidden; }
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background:var(--bg); }
+::-webkit-scrollbar-thumb { background:var(--rose); border-radius:2px; }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:0 6vw; height:68px;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(14,11,11,0.9); backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo { font-family:'Playfair Display',serif; font-size:20px; font-weight:900; color:var(--cream); text-decoration:none; }
+.nav-logo span { color:var(--rose); }
+.nav-links { display:flex; gap:28px; list-style:none; }
+.nav-links a { font-size:9px; letter-spacing:4px; text-transform:uppercase; color:rgba(255,255,255,0.45); text-decoration:none; transition:color 0.3s; position:relative; }
+.nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:1px; background:var(--rose); transition:width 0.3s; }
+.nav-links a:hover { color:var(--cream); }
+.nav-links a:hover::after { width:100%; }
+.nav-cta { background:var(--rose); color:#fff; padding:9px 22px; font-size:9px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; font-family:'Raleway',sans-serif; font-weight:600; transition:background 0.3s; }
+.nav-cta:hover { background:#b5625a; }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; padding:4px; cursor:pointer; }
+.hamburger span { display:block; width:24px; height:1px; background:var(--cream); }
+
+/* ── HERO ── */
+#hero {
+  min-height:100vh; display:flex; align-items:center;
+  position:relative; overflow:hidden; padding:110px 6vw 80px;
+}
+.hero-bg {
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(196,115,106,0.13), transparent),
+              radial-gradient(ellipse 40% 50% at 10% 80%, rgba(15,30,58,0.5), transparent),
+              linear-gradient(135deg, #0e0b0b 0%, #1a0e0e 50%, #0a0f1a 100%);
+}
+.hero-bg::after {
+  content:''; position:absolute; inset:0; opacity:0.35;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.hero-giant {
+  position:absolute; font-family:'Playfair Display',serif; font-size:clamp(140px,22vw,300px);
+  font-weight:900; color:rgba(255,255,255,0.025); line-height:1;
+  right:-2vw; bottom:-2vh; user-select:none; letter-spacing:-12px;
+}
+.hero-content { position:relative; z-index:2; max-width:620px; }
+.hero-eyebrow { display:flex; align-items:center; gap:16px; margin-bottom:28px; animation:fadeUp 1s ease both 0.2s; }
+.hero-eyebrow-line { width:40px; height:1px; background:var(--gold); }
+.hero-eyebrow-text { font-size:9px; letter-spacing:6px; color:var(--gold); text-transform:uppercase; }
+.hero-title { font-family:'Playfair Display',serif; font-size:clamp(48px,8vw,90px); font-weight:900; line-height:0.9; letter-spacing:-2px; margin-bottom:30px; animation:fadeUp 1s ease both 0.4s; }
+.hero-title em { font-style:italic; color:var(--rose); font-weight:400; }
+.hero-sub { font-size:14px; line-height:1.9; color:rgba(255,255,255,0.45); max-width:440px; margin-bottom:46px; animation:fadeUp 1s ease both 0.6s; }
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; animation:fadeUp 1s ease both 0.8s; }
+.btn-p { background:var(--rose); color:#fff; padding:16px 36px; font-size:10px; letter-spacing:4px; text-transform:uppercase; text-decoration:none; font-family:'Raleway',sans-serif; font-weight:600; transition:background 0.3s,transform 0.2s; display:inline-block; }
+.btn-p:hover { background:#b5625a; transform:translateY(-2px); }
+.btn-o { border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.7); padding:16px 36px; font-size:10px; letter-spacing:4px; text-transform:uppercase; text-decoration:none; font-family:'Raleway',sans-serif; font-weight:400; transition:border-color 0.3s,color 0.3s,transform 0.2s; display:inline-block; }
+.btn-o:hover { border-color:var(--rose); color:var(--rose); transform:translateY(-2px); }
+.hero-scroll { position:absolute; bottom:28px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; text-decoration:none; animation:fadeIn 1s ease both 1.5s; }
+.scroll-line { width:1px; height:50px; background:linear-gradient(to bottom,var(--rose),transparent); animation:scrollPulse 2s ease-in-out infinite; }
+.scroll-text { font-size:7px; letter-spacing:4px; color:var(--smoke); text-transform:uppercase; }
+
+/* ── SHARED ── */
+section { padding:100px 6vw; }
+.section-header { margin-bottom:56px; }
+.s-eye { font-size:8px; letter-spacing:6px; color:var(--rose); text-transform:uppercase; display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+.s-eye::before { content:''; width:28px; height:1px; background:var(--rose); }
+.s-title { font-family:'Playfair Display',serif; font-size:clamp(30px,5vw,52px); font-weight:900; line-height:1.05; letter-spacing:-1px; }
+.s-title em { font-style:italic; color:var(--rose); font-weight:400; }
+
+/* ── SOBRE ── */
+#sobre { background:var(--bg2); position:relative; overflow:hidden; }
+#sobre::before { content:''; position:absolute; top:-100px; right:-100px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,var(--glow),transparent 70%); pointer-events:none; }
+.sobre-grid { display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; }
+.sobre-box { background:var(--bg3); border:1px solid var(--border); padding:48px 38px; position:relative; }
+.sobre-box::before { content:''; position:absolute; top:0; left:0; width:60px; height:3px; background:linear-gradient(to right,var(--rose),var(--gold)); }
+.sobre-quote { font-family:'Playfair Display',serif; font-size:26px; font-weight:400; font-style:italic; color:var(--cream); line-height:1.4; margin-bottom:24px; }
+.sobre-qmark { font-size:80px; color:var(--rose); opacity:0.3; line-height:0.5; font-family:'Playfair Display',serif; display:block; margin-bottom:10px; }
+.brand-list { display:flex; flex-direction:column; gap:10px; margin-top:26px; }
+.brand-row { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid var(--border); }
+.brand-row:last-child { border-bottom:none; }
+.brand-dot { width:7px; height:7px; border-radius:50%; background:var(--rose); flex-shrink:0; }
+.brand-nm { font-family:'Playfair Display',serif; font-size:16px; font-weight:700; color:var(--cream); }
+.brand-desc { font-size:9px; letter-spacing:2px; color:var(--smoke); text-transform:uppercase; margin-left:auto; }
+.sobre-text p { font-size:14px; line-height:1.9; color:rgba(255,255,255,0.5); margin-bottom:18px; }
+.sobre-text p strong { color:var(--blush); font-weight:600; }
+.sobre-vals { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:32px; }
+.val { padding:18px; background:var(--bg); border:1px solid var(--border); border-left:3px solid var(--rose); }
+.val:nth-child(2) { border-left-color:var(--gold); }
+.val:nth-child(3) { border-left-color:var(--nude); }
+.val:nth-child(4) { border-left-color:#7aa8e0; }
+.val-icon { font-size:18px; margin-bottom:6px; }
+.val-title { font-family:'Playfair Display',serif; font-size:14px; font-weight:700; color:var(--cream); margin-bottom:4px; }
+.val-desc { font-size:9px; letter-spacing:1px; color:var(--smoke); line-height:1.6; }
+
+/* ── CATÁLOGOS PDF ── */
+#catalogos { background:var(--bg); }
+.cat-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:32px; }
+.cat-tab { padding:9px 22px; font-size:9px; letter-spacing:3px; text-transform:uppercase; font-family:'Raleway',sans-serif; font-weight:500; border:1px solid var(--border); background:transparent; color:var(--smoke); transition:all 0.3s; cursor:pointer; }
+.cat-tab:hover,.cat-tab.active { border-color:var(--rose); color:var(--rose); background:rgba(196,115,106,0.08); }
+.cat-group { display:none; }
+.cat-group.active { display:block; }
+.cat-group-label { font-size:8px; letter-spacing:5px; color:var(--smoke); text-transform:uppercase; margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+.cat-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:3px;
+  margin-bottom:3px;
+}
+.cat-card {
+  background:var(--bg2);
+  border:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+  transition:transform 0.4s ease, border-color 0.3s;
+  text-decoration:none;
+  display:block;
+}
+.cat-card:hover { transform:translateY(-6px); border-color:var(--rose); }
+.cat-card-visual {
+  height:240px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+/* each card gets unique gradient */
+.cat-card:nth-child(1) .cat-card-visual { background:linear-gradient(145deg,#1a0e18,#2b0a25); }
+.cat-card:nth-child(2) .cat-card-visual { background:linear-gradient(145deg,#0a1020,#0f1e3a); }
+.cat-card:nth-child(3) .cat-card-visual { background:linear-gradient(145deg,#1a1408,#2b2010); }
+.cat-card:nth-child(4) .cat-card-visual { background:linear-gradient(145deg,#0a1a10,#0f2a18); }
+.cat-card-visual::before {
+  content:'';
+  position:absolute; inset:0;
+  opacity:0.08;
+  background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='white' stroke-width='0.5'%3E%3Cpath d='M0 20h40M20 0v40'/%3E%3C/g%3E%3C/svg%3E");
+}
+.cat-emoji { font-size:52px; margin-bottom:14px; position:relative; z-index:1; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.5)); }
+.cat-card-visual-title { font-family:'Playfair Display',serif; font-size:13px; font-weight:700; color:rgba(255,255,255,0.6); letter-spacing:2px; text-transform:uppercase; position:relative; z-index:1; }
+/* hover overlay */
+.cat-hover {
+  position:absolute; inset:0;
+  background:rgba(196,115,106,0.18);
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transition:opacity 0.3s;
+  backdrop-filter:blur(2px);
+}
+.cat-card:hover .cat-hover { opacity:1; }
+.cat-hover-btn {
+  background:var(--rose); color:#fff;
+  padding:12px 24px; font-size:9px;
+  letter-spacing:4px; text-transform:uppercase;
+  font-family:'Raleway',sans-serif; font-weight:700;
+  transform:translateY(8px); transition:transform 0.3s;
+  border:none;
+}
+.cat-card:hover .cat-hover-btn { transform:translateY(0); }
+.cat-info {
+  padding:22px 22px 26px;
+  border-top:1px solid var(--border);
+  position:relative;
+}
+.cat-info::before { content:''; position:absolute; top:0; left:0; width:40px; height:2px; background:var(--rose); }
+.cat-tag { font-size:8px; letter-spacing:4px; color:var(--smoke); text-transform:uppercase; margin-bottom:8px; }
+.cat-name { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--cream); margin-bottom:6px; line-height:1.2; }
+.cat-pages { font-size:9px; letter-spacing:2px; color:var(--smoke); display:flex; align-items:center; gap:8px; }
+.cat-pages::before { content:'↓'; color:var(--rose); font-size:12px; }
+
+/* ── CATÁLOGO PRODUCTOS ── */
+#productos { background:var(--bg2); }
+.filter-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:36px; }
+.fb { padding:9px 22px; font-size:9px; letter-spacing:3px; text-transform:uppercase; font-family:'Raleway',sans-serif; font-weight:500; border:1px solid var(--border); background:transparent; color:var(--smoke); transition:all 0.3s; cursor:pointer; }
+.fb:hover,.fb.active { border-color:var(--rose); color:var(--rose); background:rgba(196,115,106,0.08); }
+.prod-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.pc { background:var(--bg); position:relative; overflow:hidden; transition:transform 0.4s ease; }
+.pc:hover { transform:translateY(-4px); z-index:2; }
+.pc:nth-child(1) { grid-column:span 2; }
+.pc:nth-child(4) { grid-column:span 2; }
+.pc-img { width:100%; height:260px; background:var(--bg3); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.pc:nth-child(1) .pc-img,.pc:nth-child(4) .pc-img { height:300px; }
+.pc-placeholder { display:flex; flex-direction:column; align-items:center; gap:8px; opacity:0.2; }
+.pc-placeholder span { font-size:44px; }
+.pc-placeholder p { font-size:8px; letter-spacing:3px; text-transform:uppercase; color:var(--cream); }
+.pc-overlay { position:absolute; inset:0; background:rgba(14,11,11,0.75); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s; }
+.pc:hover .pc-overlay { opacity:1; }
+.pc-overlay-btn { background:var(--rose); color:#fff; padding:12px 26px; font-size:9px; letter-spacing:4px; text-transform:uppercase; text-decoration:none; font-family:'Raleway',sans-serif; font-weight:600; transform:translateY(10px); transition:transform 0.3s; }
+.pc:hover .pc-overlay-btn { transform:translateY(0); }
+.pc-info { padding:20px 22px 24px; border-top:1px solid var(--border); }
+.pc-cat { font-size:8px; letter-spacing:4px; color:var(--rose); text-transform:uppercase; margin-bottom:8px; }
+.pc-name { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; color:var(--cream); margin-bottom:5px; line-height:1.2; }
+.pc-brand { font-size:9px; letter-spacing:2px; color:var(--smoke); text-transform:uppercase; }
+.pc-badge { position:absolute; top:14px; right:14px; color:#fff; font-size:8px; letter-spacing:3px; text-transform:uppercase; padding:5px 12px; }
+.pc-badge.r { background:var(--rose); }
+.pc-badge.g { background:var(--gold); color:var(--bg); }
+.pc-badge.n { background:var(--navy); }
+
+/* ── MARCAS ── */
+#marcas { background:var(--bg); overflow:hidden; position:relative; }
+#marcas::before {
+  content:''; position:absolute; top:-200px; right:-200px;
+  width:600px; height:600px; border-radius:50%;
+  background:radial-gradient(circle,rgba(196,115,106,0.07),transparent 70%);
+  pointer-events:none;
+}
+.marcas-intro { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; margin-bottom:70px; }
+.marcas-intro-text .s-title { margin-bottom:18px; }
+.marcas-intro-desc { font-size:14px; line-height:1.9; color:rgba(255,255,255,0.45); }
+.marcas-count-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+.mcount { padding:30px 26px; background:var(--bg2); border:1px solid var(--border); }
+.mcount-num { font-family:'Playfair Display',serif; font-size:46px; font-weight:900; color:var(--rose); line-height:1; }
+.mcount-label { font-size:9px; letter-spacing:4px; color:var(--smoke); text-transform:uppercase; margin-top:6px; }
+
+/* brand category panels */
+.brands-sections { display:flex; flex-direction:column; gap:2px; }
+.brand-section {
+  background:var(--bg2);
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+.brand-section-header {
+  padding:20px 28px;
+  display:flex; align-items:center; gap:16px;
+  cursor:pointer;
+  transition:background 0.3s;
+  user-select:none;
+}
+.brand-section-header:hover { background:var(--bg3); }
+.bsh-icon { font-size:18px; }
+.bsh-title { font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--cream); flex:1; }
+.bsh-count { font-size:9px; letter-spacing:3px; color:var(--smoke); text-transform:uppercase; }
+.bsh-arrow { font-size:14px; color:var(--rose); transition:transform 0.3s; }
+.brand-section.open .bsh-arrow { transform:rotate(180deg); }
+.brand-section-body {
+  max-height:0; overflow:hidden;
+  transition:max-height 0.4s ease, padding 0.3s;
+  padding:0 28px;
+}
+.brand-section.open .brand-section-body {
+  max-height:400px;
+  padding:0 28px 26px;
+}
+.brand-chips { display:flex; flex-wrap:wrap; gap:8px; padding-top:14px; border-top:1px solid var(--border); }
+.brand-chip {
+  padding:7px 16px;
+  font-size:10px; letter-spacing:2px;
+  border:1px solid var(--border);
+  color:rgba(255,255,255,0.55);
+  transition:all 0.3s;
+  cursor:default;
+  font-family:'Raleway',sans-serif;
+}
+.brand-chip:hover { border-color:var(--rose); color:var(--rose); background:rgba(196,115,106,0.06); }
+
+/* ── GALERÍA ── */
+#galeria { background:var(--bg2); }
+.gal-top { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:36px; flex-wrap:wrap; gap:16px; }
+.gal-grid { display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:200px 200px; gap:3px; }
+.gi { background:var(--bg3); overflow:hidden; position:relative; cursor:pointer; transition:transform 0.4s ease; }
+.gi:hover { transform:scale(0.98); }
+.gi:nth-child(1) { grid-column:span 2; grid-row:span 2; }
+.gi:nth-child(4) { grid-column:span 2; }
+.gph { width:100%; height:100%; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; opacity:0.2; font-family:'Playfair Display',serif; font-style:italic; font-size:12px; color:var(--cream); }
+.gph span { font-size:30px; font-style:normal; }
+.goverlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(14,11,11,0.85),transparent 50%); display:flex; align-items:flex-end; padding:18px; opacity:0; transition:opacity 0.3s; }
+.gi:hover .goverlay { opacity:1; }
+.goverlay span { font-size:9px; letter-spacing:4px; color:rgba(255,255,255,0.7); text-transform:uppercase; }
+.gal-tip { margin-top:20px; padding:15px 22px; background:rgba(196,115,106,0.07); border:1px solid rgba(196,115,106,0.2); display:flex; align-items:center; gap:12px; }
+.gal-tip-text { font-size:11px; color:rgba(255,255,255,0.45); line-height:1.7; }
+.gal-tip-text strong { color:var(--blush); }
+
+/* ── CONTACTO ── */
+#contacto { background:var(--bg); position:relative; overflow:hidden; }
+#contacto::before { content:''; position:absolute; bottom:-150px; left:-150px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(15,30,58,0.45),transparent 70%); pointer-events:none; }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start; }
+.c-desc { font-size:14px; line-height:1.9; color:rgba(255,255,255,0.45); margin-bottom:40px; }
+.c-cards { display:flex; flex-direction:column; gap:14px; }
+.c-card { display:flex; align-items:center; gap:18px; padding:20px 24px; background:var(--bg2); border:1px solid var(--border); border-left:3px solid var(--rose); text-decoration:none; transition:all 0.3s; }
+.c-card:hover { background:var(--bg3); transform:translateX(4px); }
+.c-card.ig { border-left-color:#c13584; }
+.c-icon { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; background:rgba(255,255,255,0.04); flex-shrink:0; }
+.c-label { font-size:8px; letter-spacing:4px; color:var(--smoke); text-transform:uppercase; margin-bottom:4px; }
+.c-val { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--cream); }
+.c-arr { margin-left:auto; font-size:16px; color:var(--smoke); transition:transform 0.3s,color 0.3s; }
+.c-card:hover .c-arr { transform:translateX(4px); color:var(--rose); }
+.contact-right { background:var(--bg2); border:1px solid var(--border); padding:42px 38px; position:relative; }
+.contact-right::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(to right,var(--rose),var(--gold),transparent); }
+.cf-title { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--cream); margin-bottom:8px; }
+.cf-sub { font-size:11px; color:var(--smoke); letter-spacing:1px; margin-bottom:28px; line-height:1.7; }
+.ff { margin-bottom:16px; }
+.fl { display:block; font-size:8px; letter-spacing:4px; text-transform:uppercase; color:var(--smoke); margin-bottom:7px; }
+.fi,.fsel,.fta {
+  width:100%; background:var(--bg); border:1px solid var(--border);
+  color:var(--cream); padding:13px 15px; font-family:'Raleway',sans-serif;
+  font-size:13px; font-weight:300; transition:border-color 0.3s; outline:none; appearance:none;
+}
+.fi:focus,.fsel:focus,.fta:focus { border-color:var(--rose); }
+.fi::placeholder,.fta::placeholder { color:var(--smoke); }
+.fta { resize:vertical; min-height:90px; }
+.fsel { cursor:pointer; }
+.fsel option { background:var(--bg2); }
+.fsub { width:100%; background:var(--rose); color:#fff; border:none; padding:15px; font-size:10px; letter-spacing:5px; text-transform:uppercase; font-family:'Raleway',sans-serif; font-weight:700; margin-top:8px; cursor:pointer; transition:background 0.3s,transform 0.2s; }
+.fsub:hover { background:#b5625a; transform:translateY(-2px); }
+
+/* ── FOOTER ── */
+footer { background:#080606; padding:50px 6vw 28px; border-top:1px solid var(--border); }
+.footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:55px; margin-bottom:46px; }
+.f-logo { font-family:'Playfair Display',serif; font-size:24px; font-weight:900; color:var(--cream); margin-bottom:12px; }
+.f-logo span { color:var(--rose); }
+.f-desc { font-size:12px; line-height:1.9; color:var(--smoke); margin-bottom:22px; }
+.f-socials { display:flex; gap:10px; }
+.f-soc { width:34px; height:34px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:15px; text-decoration:none; transition:border-color 0.3s,background 0.3s; }
+.f-soc:hover { border-color:var(--rose); background:rgba(196,115,106,0.1); }
+.f-col-title { font-size:9px; letter-spacing:5px; text-transform:uppercase; color:var(--rose); margin-bottom:18px; }
+.f-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.f-links a { font-size:13px; color:var(--smoke); text-decoration:none; transition:color 0.3s; display:flex; align-items:center; gap:8px; }
+.f-links a::before { content:'—'; font-size:10px; color:var(--border); }
+.f-links a:hover { color:var(--cream); }
+.f-bottom { padding-top:26px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+.f-copy { font-size:10px; letter-spacing:2px; color:var(--smoke); }
+.f-copy span { color:var(--rose); }
+.f-made { font-size:10px; letter-spacing:2px; color:rgba(255,255,255,0.12); }
+
+/* ── FLOATING WA ── */
+.wa-float { position:fixed; bottom:28px; right:28px; z-index:999; width:56px; height:56px; background:#25d366; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; text-decoration:none; box-shadow:0 8px 28px rgba(37,211,102,0.35); transition:transform 0.3s,box-shadow 0.3s; animation:fadeIn 1.5s ease both 2s; }
+.wa-float:hover { transform:scale(1.1) translateY(-2px); box-shadow:0 14px 40px rgba(37,211,102,0.5); }
+.wa-pulse { position:absolute; inset:-6px; border-radius:50%; background:rgba(37,211,102,0.2); animation:waPulse 2.5s ease-in-out infinite; }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(36px); transition:opacity 0.8s ease,transform 0.8s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.rd1 { transition-delay:0.1s; } .rd2 { transition-delay:0.2s; } .rd3 { transition-delay:0.3s; } .rd4 { transition-delay:0.4s; }
+
+/* ── KEYFRAMES ── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes scrollPulse { 0%,100% { opacity:0.4; } 50% { opacity:1; } }
+@keyframes waPulse { 0%,100% { transform:scale(1); opacity:0.35; } 50% { transform:scale(1.25); opacity:0; } }
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px) {
+  .nav-links,.nav-cta { display:none; }
+  .hamburger { display:flex; }
+  .sobre-grid,.contact-grid,.marcas-intro,.footer-grid { grid-template-columns:1fr; gap:36px; }
+  .cat-grid { grid-template-columns:repeat(2,1fr); }
+  .prod-grid { grid-template-columns:1fr 1fr; }
+  .pc:nth-child(1),.pc:nth-child(4) { grid-column:span 1; }
+  .gal-grid { grid-template-columns:repeat(2,1fr); grid-template-rows:180px 180px 180px; }
+  .gi:nth-child(1) { grid-column:span 2; }
+  .gi:nth-child(4) { grid-column:span 1; }
+  .marcas-count-grid { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:600px) {
+  section { padding:70px 5vw; }
+  #hero { padding:100px 5vw 60px; }
+  .cat-grid { grid-template-columns:1fr 1fr; }
+  .prod-grid { grid-template-columns:1fr; }
+  .pc:nth-child(1),.pc:nth-child(4) { grid-column:span 1; }
+  .sobre-vals { grid-template-columns:1fr; }
+  .gal-grid { grid-template-columns:1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Strange <span>Maddame</span></a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Nosotros</a></li>
+    <li><a href="#catalogos">Catálogos</a></li>
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#marcas">Marcas</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="https://wa.me/526143211542" target="_blank" class="nav-cta">WhatsApp</a>
+  <button class="hamburger" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-giant">MODA</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-text">Catálogo Primavera 2026</span>
+    </div>
+    <h1 class="hero-title">Moda que<br><em>te define</em></h1>
+    <p class="hero-sub">Ropa, lencería, calzado y más de las mejores marcas del catálogo Andrea. Atención personalizada, envíos rápidos y los mejores estilos de temporada para ti y tu familia.</p>
+    <div class="hero-btns">
+      <a href="#catalogos" class="btn-p">Ver Catálogos</a>
+      <a href="https://wa.me/526143211542" target="_blank" class="btn-o">Escríbenos ↗</a>
+    </div>
+  </div>
+  <a href="#sobre" class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </a>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-box reveal">
+      <span class="sobre-qmark">"</span>
+      <p class="sobre-quote">Vestirte bien es la forma más hermosa de decirle al mundo quién eres.</p>
+      <div class="brand-list">
+        <div class="brand-row"><div class="brand-dot"></div><span class="brand-nm">Lencería</span><span class="brand-desc">Anne Klein · Nautica</span></div>
+        <div class="brand-row"><div class="brand-dot" style="background:var(--gold)"></div><span class="brand-nm">Calzado</span><span class="brand-desc">Confort & Moda</span></div>
+        <div class="brand-row"><div class="brand-dot" style="background:#7aa8e0"></div><span class="brand-nm">Caballero</span><span class="brand-desc">Vestir & Sport</span></div>
+        <div class="brand-row"><div class="brand-dot" style="background:#7acf9a"></div><span class="brand-nm">Infantil</span><span class="brand-desc">Baby & Niños</span></div>
+      </div>
+    </div>
+    <div class="sobre-text reveal rd2">
+      <div class="section-header">
+        <div class="s-eye">Sobre mí</div>
+        <h2 class="s-title">Tu <em>aliada</em><br>de moda</h2>
+      </div>
+      <p>Soy distribuidora oficial del catálogo <strong>Andrea</strong>, con una selección cuidadosa de las mejores marcas de moda femenina, masculina e infantil: ropa, lencería, calzado y mucho más.</p>
+      <p>Me especializo en brindarte <strong>atención personalizada</strong>, asesoría de tallas y estilos, y entregas rápidas para que siempre te veas increíble sin salir de casa.</p>
+      <div class="sobre-vals">
+        <div class="val"><div class="val-icon">🌸</div><div class="val-title">Calidad</div><div class="val-desc">Marcas premium seleccionadas</div></div>
+        <div class="val"><div class="val-icon">✦</div><div class="val-title">Asesoría</div><div class="val-desc">Te ayudo a elegir tu talla</div></div>
+        <div class="val"><div class="val-icon">🚚</div><div class="val-title">Envíos</div><div class="val-desc">Rápidos y seguros</div></div>
+        <div class="val"><div class="val-icon">💬</div><div class="val-title">Atención</div><div class="val-desc">Directa y personalizada</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATÁLOGOS PDF -->
+<section id="catalogos">
+  <div class="section-header reveal">
+    <div class="s-eye">Primavera 2026</div>
+    <h2 class="s-title">Todos los <em>Catálogos</em></h2>
+  </div>
+
+  <!-- Solo PDFs descargables -->
+  <div class="cat-group active" id="tab-mis-pdf">
+    <div class="cat-group-label">📂 Catálogos descargables — abre o descarga directo desde aquí</div>
+    <div class="cat-grid">
+      <a href="https://drive.google.com/file/d/1rp0xEDhoMxKcdAskNEQ5f_Og9Pom2i_z/view?usp=sharing" target="_blank" class="cat-card">
+        <div class="cat-card-visual" style="background:linear-gradient(145deg,#1a0e18,#2b0a25)">
+          <div class="cat-emoji">👙</div><div class="cat-card-visual-title">PDF Descargable</div>
+        </div>
+        <div class="cat-hover"><span class="cat-hover-btn">Abrir PDF</span></div>
+        <div class="cat-info"><div class="cat-tag">Mujer · Íntimo</div><div class="cat-name">Lencería Andrea</div><div class="cat-pages">↓ Descarga directa</div></div>
+      </a>
+      <a href="https://drive.google.com/file/d/1fbeIuHMaRz2IPk_BBPNbpBh_tUjFsRBW/view?usp=sharing" target="_blank" class="cat-card">
+        <div class="cat-card-visual" style="background:linear-gradient(145deg,#200a18,#380a28)">
+          <div class="cat-emoji">👗</div><div class="cat-card-visual-title">PDF Descargable</div>
+        </div>
+        <div class="cat-hover"><span class="cat-hover-btn">Abrir PDF</span></div>
+        <div class="cat-info"><div class="cat-tag">Mujer · Moda</div><div class="cat-name">Andrea Vestir</div><div class="cat-pages">↓ Descarga directa</div></div>
+      </a>
+      <a href="https://drive.google.com/file/d/1TCXEWFkz_-OE9PaZ9VBIojgUel_j7_-E/view?usp=sharing" target="_blank" class="cat-card">
+        <div class="cat-card-visual" style="background:linear-gradient(145deg,#1a1408,#2b2010)">
+          <div class="cat-emoji">🕴️</div><div class="cat-card-visual-title">PDF Descargable</div>
+        </div>
+        <div class="cat-hover"><span class="cat-hover-btn">Abrir PDF</span></div>
+        <div class="cat-info"><div class="cat-tag">Hombre · Vestir</div><div class="cat-name">Calzado Caballero</div><div class="cat-pages">↓ Descarga directa</div></div>
+      </a>
+      <a href="https://drive.google.com/file/d/1wVxTsA-luKj3uviL30tqUJSaO2ui2_ye/view?usp=sharing" target="_blank" class="cat-card">
+        <div class="cat-card-visual" style="background:linear-gradient(145deg,#0a1020,#0f1e3a)">
+          <div class="cat-emoji">👠</div><div class="cat-card-visual-title">PDF Descargable</div>
+        </div>
+        <div class="cat-hover"><span class="cat-hover-btn">Abrir PDF</span></div>
+        <div class="cat-info"><div class="cat-tag">Mujer · Calzado</div><div class="cat-name">Calzado Confort</div><div class="cat-pages">↓ Descarga directa</div></div>
+      </a>
+      <a href="https://drive.google.com/file/d/1HK36WyHfDZNe9qbn08eVh7RDE7RnERIC/view?usp=sharing" target="_blank" class="cat-card">
+        <div class="cat-card-visual" style="background:linear-gradient(145deg,#0c1630,#142448)">
+          <div class="cat-emoji">👡</div><div class="cat-card-visual-title">PDF Descargable</div>
+        </div>
+        <div class="cat-hover"><span class="cat-hover-btn">Abrir PDF</span></div>
+        <div class="cat-info"><div class="cat-tag">Mujer · Calzado</div><div class="cat-name">Calzado Dama</div><div class="cat-pages">↓ Descarga directa</div></div>
+      </a>
+      <a href="https://drive.google.com/file/d/1Fv413mT6Q0FbquD2Np-H3UNYA373sqCV/view?usp=sharing" target="_blank" class="cat-card">
+        <div class="cat-card-visual" style="background:linear-gradient(145deg,#0e2016,#182e20)">
+          <div class="cat-emoji">🧒</div><div class="cat-card-visual-title">PDF Descargable</div>
+        </div>
+        <div class="cat-hover"><span class="cat-hover-btn">Abrir PDF</span></div>
+        <div class="cat-info"><div class="cat-tag">Niños · Ropa</div><div class="cat-name">Infantil</div><div class="cat-pages">↓ Descarga directa</div></div>
+      </a>
+      <a href="https://drive.google.com/file/d/1EBL7PKKebCCNTjnXdFtl2Vqo04VMTJlM/view?usp=sharing" target="_blank" class="cat-card">
+        <div class="cat-card-visual" style="background:linear-gradient(145deg,#0a1a10,#0f2a18)">
+          <div class="cat-emoji">👶</div><div class="cat-card-visual-title">PDF Descargable</div>
+        </div>
+        <div class="cat-hover"><span class="cat-hover-btn">Abrir PDF</span></div>
+        <div class="cat-info"><div class="cat-tag">Niños · Baby</div><div class="cat-name">Infantil Baby</div><div class="cat-pages">↓ Descarga directa</div></div>
+      </a>
+      <a href="https://drive.google.com/file/d/1_0HQGFbWe16lSMd03OUstqnLu6KR55E5/view?usp=sharing" target="_blank" class="cat-card">
+        <div class="cat-card-visual" style="background:linear-gradient(145deg,#1c1808,#2e260e)">
+          <div class="cat-emoji">👞</div><div class="cat-card-visual-title">PDF Descargable</div>
+        </div>
+        <div class="cat-hover"><span class="cat-hover-btn">Abrir PDF</span></div>
+        <div class="cat-info"><div class="cat-tag">Hombre · Moda</div><div class="cat-name">Vestir Caballero</div><div class="cat-pages">↓ Descarga directa</div></div>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- PRODUCTOS DESTACADOS -->
+<section id="productos">
+  <div class="section-header reveal">
+    <div class="s-eye">Destacados</div>
+    <h2 class="s-title">Productos <em>top</em></h2>
+  </div>
+  <div class="filter-row reveal">
+    <button class="fb active" onclick="filterP(this,'all')">Todos</button>
+    <button class="fb" onclick="filterP(this,'lenceria')">Lencería</button>
+    <button class="fb" onclick="filterP(this,'calzado')">Calzado</button>
+    <button class="fb" onclick="filterP(this,'caballero')">Caballero</button>
+    <button class="fb" onclick="filterP(this,'infantil')">Infantil</button>
+  </div>
+  <div class="prod-grid reveal" id="prod-grid">
+    <div class="pc" data-cat="lenceria">
+      <div class="pc-img auto-img" data-index="0"><div class="pc-placeholder"><span>⏳</span><p>Cargando...</p></div></div>
+      <div class="pc-overlay"><a href="https://wa.me/526143211542?text=Hola!%20Me%20interesa%20la%20lencer%C3%ADa%20Anne%20Klein" target="_blank" class="pc-overlay-btn">Consultar</a></div>
+      <span class="pc-badge r">Nuevo</span>
+      <div class="pc-info"><div class="pc-cat">Lencería</div><div class="pc-name">Bra Copa Completa</div><div class="pc-brand">Anne Klein</div></div>
+    </div>
+    <div class="pc" data-cat="lenceria">
+      <div class="pc-img auto-img" data-index="1"><div class="pc-placeholder"><span>⏳</span><p>Cargando...</p></div></div>
+      <div class="pc-overlay"><a href="https://wa.me/526143211542?text=Hola!%20Me%20interesa%20el%20coordinado%20Nautica" target="_blank" class="pc-overlay-btn">Consultar</a></div>
+      <span class="pc-badge g">Temporada</span>
+      <div class="pc-info"><div class="pc-cat">Lencería</div><div class="pc-name">Coordinado Nautica</div><div class="pc-brand">Nautica</div></div>
+    </div>
+    <div class="pc" data-cat="calzado">
+      <div class="pc-img auto-img" data-index="2"><div class="pc-placeholder"><span>⏳</span><p>Cargando...</p></div></div>
+      <div class="pc-overlay"><a href="https://wa.me/526143211542?text=Hola!%20Me%20interesa%20el%20calzado" target="_blank" class="pc-overlay-btn">Consultar</a></div>
+      <div class="pc-info"><div class="pc-cat">Calzado</div><div class="pc-name">Calzado Confort</div><div class="pc-brand">Andrea</div></div>
+    </div>
+    <div class="pc" data-cat="caballero">
+      <div class="pc-img auto-img" data-index="3"><div class="pc-placeholder"><span>⏳</span><p>Cargando...</p></div></div>
+      <div class="pc-overlay"><a href="https://wa.me/526143211542?text=Hola!%20Me%20interesa%20ropa%20de%20caballero" target="_blank" class="pc-overlay-btn">Consultar</a></div>
+      <span class="pc-badge n">Caballero</span>
+      <div class="pc-info"><div class="pc-cat">Hombre</div><div class="pc-name">Vestir Caballero</div><div class="pc-brand">Andrea Men</div></div>
+    </div>
+    <div class="pc" data-cat="infantil">
+      <div class="pc-img auto-img" data-index="4"><div class="pc-placeholder"><span>⏳</span><p>Cargando...</p></div></div>
+      <div class="pc-overlay"><a href="https://wa.me/526143211542?text=Hola!%20Me%20interesa%20ropa%20infantil" target="_blank" class="pc-overlay-btn">Consultar</a></div>
+      <div class="pc-info"><div class="pc-cat">Infantil</div><div class="pc-name">Colección Baby</div><div class="pc-brand">Andrea Baby</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARCAS -->
+<section id="marcas">
+  <div class="marcas-intro reveal">
+    <div class="marcas-intro-text">
+      <div class="s-eye">Brands</div>
+      <h2 class="s-title">Todas las<br><em>Marcas</em></h2>
+      <p class="marcas-intro-desc" style="margin-top:18px;">Trabajamos con más de 50 marcas nacionales e internacionales del catálogo Andrea. Desde moda premium hasta calzado deportivo, para mujer, hombre y niños.</p>
+    </div>
+    <div class="marcas-count-grid">
+      <div class="mcount"><div class="mcount-num">50+</div><div class="mcount-label">Marcas disponibles</div></div>
+      <div class="mcount"><div class="mcount-num">4</div><div class="mcount-label">Catálogos activos</div></div>
+      <div class="mcount"><div class="mcount-num">100+</div><div class="mcount-label">Estilos de temporada</div></div>
+      <div class="mcount"><div class="mcount-num">★★★★★</div><div class="mcount-label" style="font-size:8px">Clientes satisfechos</div></div>
+    </div>
+  </div>
+
+  <div class="brands-sections reveal">
+
+    <!-- ANDREA OWN -->
+    <div class="brand-section open">
+      <div class="brand-section-header" onclick="toggleBrand(this)">
+        <span class="bsh-icon">🏷️</span>
+        <span class="bsh-title">Marcas Andrea</span>
+        <span class="bsh-count">9 marcas</span>
+        <span class="bsh-arrow">▾</span>
+      </div>
+      <div class="brand-section-body">
+        <div class="brand-chips">
+          <span class="brand-chip">Andrea</span>
+          <span class="brand-chip">Andrea Premium</span>
+          <span class="brand-chip">Andrea Lencería</span>
+          <span class="brand-chip">Andrea Outdoor</span>
+          <span class="brand-chip">Andrea Sport</span>
+          <span class="brand-chip">Andrea Men</span>
+          <span class="brand-chip">Ferrato</span>
+          <span class="brand-chip">Ferrato Outdoor</span>
+          <span class="brand-chip">Ferrato Sport</span>
+          <span class="brand-chip">Forastero</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEPORTIVAS & PREMIUM -->
+    <div class="brand-section">
+      <div class="brand-section-header" onclick="toggleBrand(this)">
+        <span class="bsh-icon">👟</span>
+        <span class="bsh-title">Deportivas & Premium</span>
+        <span class="bsh-count">14 marcas</span>
+        <span class="bsh-arrow">▾</span>
+      </div>
+      <div class="brand-section-body">
+        <div class="brand-chips">
+          <span class="brand-chip">Adidas</span>
+          <span class="brand-chip">Nike</span>
+          <span class="brand-chip">Puma</span>
+          <span class="brand-chip">Reebok</span>
+          <span class="brand-chip">Fila</span>
+          <span class="brand-chip">Everlast</span>
+          <span class="brand-chip">Under Armour</span>
+          <span class="brand-chip">Vans</span>
+          <span class="brand-chip">New Era</span>
+          <span class="brand-chip">K-Swiss</span>
+          <span class="brand-chip">Lotto</span>
+          <span class="brand-chip">Wilson</span>
+          <span class="brand-chip">Skechers</span>
+          <span class="brand-chip">Air Walk</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODA & LIFESTYLE -->
+    <div class="brand-section">
+      <div class="brand-section-header" onclick="toggleBrand(this)">
+        <span class="bsh-icon">👗</span>
+        <span class="bsh-title">Moda & Lifestyle</span>
+        <span class="bsh-count">12 marcas</span>
+        <span class="bsh-arrow">▾</span>
+      </div>
+      <div class="brand-section-body">
+        <div class="brand-chips">
+          <span class="brand-chip">Anne Klein</span>
+          <span class="brand-chip">Nautica</span>
+          <span class="brand-chip">Aeropostale</span>
+          <span class="brand-chip">Express</span>
+          <span class="brand-chip">Forever 21</span>
+          <span class="brand-chip">Pepe Jeans</span>
+          <span class="brand-chip">Polo Club</span>
+          <span class="brand-chip">Lacoste</span>
+          <span class="brand-chip">Rebelde</span>
+          <span class="brand-chip">Yuya</span>
+          <span class="brand-chip">Pirma</span>
+          <span class="brand-chip">Gotcha</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LUJO & PREMIUM -->
+    <div class="brand-section">
+      <div class="brand-section-header" onclick="toggleBrand(this)">
+        <span class="bsh-icon">💎</span>
+        <span class="bsh-title">Lujo & Premium</span>
+        <span class="bsh-count">5 marcas</span>
+        <span class="bsh-arrow">▾</span>
+      </div>
+      <div class="brand-section-body">
+        <div class="brand-chips">
+          <span class="brand-chip">Lamborghini</span>
+          <span class="brand-chip">Jeep</span>
+          <span class="brand-chip">Discovery</span>
+          <span class="brand-chip">Champion</span>
+          <span class="brand-chip">Cat</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENTRETENIMIENTO & POP -->
+    <div class="brand-section">
+      <div class="brand-section-header" onclick="toggleBrand(this)">
+        <span class="bsh-icon">🎬</span>
+        <span class="bsh-title">Entretenimiento & Pop Culture</span>
+        <span class="bsh-count">4 marcas</span>
+        <span class="bsh-arrow">▾</span>
+      </div>
+      <div class="brand-section-body">
+        <div class="brand-chips">
+          <span class="brand-chip">Marvel</span>
+          <span class="brand-chip">Disney</span>
+          <span class="brand-chip">Spring Air</span>
+          <span class="brand-chip">SwissBrand</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SALUD & BELLEZA -->
+    <div class="brand-section">
+      <div class="brand-section-header" onclick="toggleBrand(this)">
+        <span class="bsh-icon">💄</span>
+        <span class="bsh-title">Salud, Belleza & Bienestar</span>
+        <span class="bsh-count">5 marcas</span>
+        <span class="bsh-arrow">▾</span>
+      </div>
+      <div class="brand-section-body">
+        <div class="brand-chips">
+          <span class="brand-chip">Revlon</span>
+          <span class="brand-chip">L'Oréal</span>
+          <span class="brand-chip">Goc Make Up</span>
+          <span class="brand-chip">Dr. Scholl's</span>
+          <span class="brand-chip">Panam</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="gal-top">
+    <div class="reveal">
+      <div class="s-eye">Galería</div>
+      <h2 class="s-title">Nuestros <em>Looks</em></h2>
+    </div>
+    <a href="https://instagram.com/strangemaddame" target="_blank" class="btn-o reveal">Ver en Instagram ↗</a>
+  </div>
+  <div class="gal-grid reveal">
+    <div class="gi"><div class="gph"><span>📷</span>Tu foto principal aquí</div><div class="goverlay"><span>Ver look</span></div></div>
+    <div class="gi"><div class="gph"><span>📷</span>Foto 2</div><div class="goverlay"><span>Ver look</span></div></div>
+    <div class="gi"><div class="gph"><span>📷</span>Foto 3</div><div class="goverlay"><span>Ver look</span></div></div>
+    <div class="gi"><div class="gph"><span>📷</span>Foto 4</div><div class="goverlay"><span>Ver look</span></div></div>
+    <div class="gi"><div class="gph"><span>📷</span>Foto 5</div><div class="goverlay"><span>Ver look</span></div></div>
+  </div>
+  <div class="gal-tip reveal" style="margin-top:18px;">
+    <span style="font-size:16px;">💡</span>
+    <span class="gal-tip-text"><strong>¿Cómo agregar fotos?</strong> Abre el HTML en un editor, busca "gph" y reemplaza el div por <code>&lt;img src="foto.jpg" style="width:100%;height:100%;object-fit:cover"&gt;</code></span>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="s-eye">Contacto</div>
+      <h2 class="s-title">Hablemos <em>hoy</em></h2>
+      <p class="c-desc">¿Te gustó algo? ¿Necesitas asesoría de tallas? Escríbenos y te respondemos de inmediato con opciones y precios personalizados.</p>
+      <div class="c-cards">
+        <a href="https://wa.me/526143211542?text=Hola!%20Quisiera%20ver%20el%20cat%C3%A1logo%20Andrea" target="_blank" class="c-card">
+          <div class="c-icon">📱</div>
+          <div><div class="c-label">WhatsApp</div><div class="c-val">614 321 1542</div></div>
+          <span class="c-arr">→</span>
+        </a>
+        <a href="https://instagram.com/strangemaddame" target="_blank" class="c-card ig">
+          <div class="c-icon">📸</div>
+          <div><div class="c-label">Instagram</div><div class="c-val">@strangemaddame</div></div>
+          <span class="c-arr">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-right reveal rd2">
+      <div class="cf-title">¿Te interesa algo?</div>
+      <p class="cf-sub">Cuéntanos qué buscas y te enviamos opciones directo a tu WhatsApp.</p>
+      <div class="ff"><label class="fl">Tu nombre</label><input class="fi" type="text" placeholder="¿Cómo te llamas?"></div>
+      <div class="ff">
+        <label class="fl">¿Qué te interesa?</label>
+        <select class="fsel">
+          <option value="">Selecciona una categoría</option>
+          <option>Lencería Anne Klein</option>
+          <option>Lencería Nautica</option>
+          <option>Calzado Confort</option>
+          <option>Ropa Caballero</option>
+          <option>Ropa Infantil / Baby</option>
+          <option>Ver todo el catálogo</option>
+        </select>
+      </div>
+      <div class="ff"><label class="fl">Mensaje (opcional)</label><textarea class="fta" placeholder="Cuéntanos tu talla, color favorito o cualquier duda..."></textarea></div>
+      <button class="fsub" onclick="sendWA()">Enviar por WhatsApp ✦</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="f-logo">Strange <span>Maddame</span></div>
+      <p class="f-desc">Distribuidora oficial del catálogo Andrea. Moda para toda la familia: mujer, hombre, niños y bebés. Lencería, calzado, ropa y más de 50 marcas.</p>
+      <div class="f-socials">
+        <a href="https://wa.me/526143211542" target="_blank" class="f-soc">📱</a>
+        <a href="https://instagram.com/strangemaddame" target="_blank" class="f-soc">📸</a>
+      </div>
+    </div>
+    <div>
+      <div class="f-col-title">Catálogos</div>
+      <ul class="f-links">
+        <li><a href="https://drive.google.com/file/d/1rp0xEDhoMxKcdAskNEQ5f_Og9Pom2i_z/view?usp=sharing" target="_blank">Lencería Andrea</a></li>
+        <li><a href="https://drive.google.com/file/d/1fbeIuHMaRz2IPk_BBPNbpBh_tUjFsRBW/view?usp=sharing" target="_blank">Andrea Vestir</a></li>
+        <li><a href="https://drive.google.com/file/d/1wVxTsA-luKj3uviL30tqUJSaO2ui2_ye/view?usp=sharing" target="_blank">Calzado Confort</a></li>
+        <li><a href="https://drive.google.com/file/d/1HK36WyHfDZNe9qbn08eVh7RDE7RnERIC/view?usp=sharing" target="_blank">Calzado Dama</a></li>
+        <li><a href="https://drive.google.com/file/d/1TCXEWFkz_-OE9PaZ9VBIojgUel_j7_-E/view?usp=sharing" target="_blank">Calzado Caballero</a></li>
+        <li><a href="https://drive.google.com/file/d/1EBL7PKKebCCNTjnXdFtl2Vqo04VMTJlM/view?usp=sharing" target="_blank">Infantil Baby</a></li>
+        <li><a href="https://drive.google.com/file/d/1_0HQGFbWe16lSMd03OUstqnLu6KR55E5/view?usp=sharing" target="_blank">Vestir Caballero</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-col-title">Navegación</div>
+      <ul class="f-links">
+        <li><a href="#sobre">Sobre mí</a></li>
+        <li><a href="#marcas">Marcas</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <span class="f-copy">© 2026 <span>Strange Maddame</span> · Distribuidora Andrea</span>
+    <span class="f-made">Primavera 2026</span>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/526143211542?text=Hola!%20Quisiera%20ver%20el%20cat%C3%A1logo%20Andrea" target="_blank" class="wa-float">
+  <div class="wa-pulse"></div>💬
+</a>
+
+<script>
+// ── ROTACIÓN AUTOMÁTICA DE IMÁGENES DESDE GOOGLE DRIVE ──
+// ID de la carpeta de Google Drive con las 404 imágenes
+const FOLDER_ID = '10aMN2mkd7rJvohKzqPlkjVA_d_WWN7Sd';
+
+// Genera una URL de imagen directa desde un file ID de Drive
+function driveImg(fileId) {
+  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w600`;
+}
+
+// Lista de IDs de imágenes — se cargan dinámicamente via API pública
+// Como no tenemos API key aquí, usamos un truco: guardamos los IDs en localStorage
+// y los rotamos cada vez que se carga la página.
+// Para que funcione: la primera vez verás placeholders, pero puedes pegar los IDs abajo.
+
+// ── SOLUCIÓN SIMPLE: pegamos aquí los IDs de tus imágenes ──
+// Instrucciones: abre tu carpeta en Drive → selecciona una imagen → clic derecho
+// → "Obtener enlace" → el ID es la parte entre /d/ y /view
+// Ejemplo: https://drive.google.com/file/d/ESTE_ES_EL_ID/view
+
+// Por ahora usamos los IDs de tus PDFs como demo — reemplázalos con IDs de tus fotos
+let imagePool = [];
+
+async function loadDriveImages() {
+  // Intentamos cargar via proxy público de Drive
+  // Usamos IDs conocidos de tu carpeta como semilla inicial
+  const knownIds = [
+    '1AxQNhHCeiP4cmwWG-urOUhJjlDYFvua7',
+    '1SyP3lAPiz8bSdKB7CLEDI27c6Fy9LTWg',
+    '1wm7PMp4w8Jv64eRXx3-hEmVhsE8Uo6dx',
+    '1V2XNSBuEnSghTeVHvwmHj9QDGVhQoZOb',
+    '1pSffFcStH2R7Qdy5c2C189t5E3SP03fr',
+    '1Y7yNYg8IK1iBr4r1gnYGxEgJcOPq9cr3',
+    '1b7lvqedKHDIeODIDZAiOtUGOy-10bxDJ',
+    '1xna2eKZT7M-2uQZS4l2IS-Qm9ptSmAds',
+    '1epIbHWSZa7_S0SyJHDti-SJbGu5NBkQJ',
+    '1wXjz56uLCeutWRigPWNeEGvLLrAuDVht',
+  ];
+
+  // Si hay IDs guardados en caché local, los usamos
+  const cached = sessionStorage.getItem('driveImageIds');
+  if (cached) {
+    imagePool = JSON.parse(cached);
+  } else {
+    imagePool = knownIds;
+  }
+
+  assignImages();
+  startRotation();
+}
+
+// Asigna imágenes aleatorias a cada tarjeta de producto
+let assignments = [];
+function assignImages() {
+  const cards = document.querySelectorAll('.auto-img');
+  assignments = [];
+  const shuffled = [...imagePool].sort(() => Math.random() - 0.5);
+  cards.forEach((card, i) => {
+    const id = shuffled[i % shuffled.length];
+    const idx = imagePool.indexOf(id);
+    assignments.push({ card, currentIdx: idx });
+    setCardImage(card, id);
+  });
+}
+
+function setCardImage(card, fileId) {
+  const url = driveImg(fileId);
+  card.style.backgroundImage = `url('${url}')`;
+  card.style.backgroundSize = 'cover';
+  card.style.backgroundPosition = 'center';
+  // Ocultar placeholder
+  const ph = card.querySelector('.pc-placeholder');
+  if (ph) ph.style.display = 'none';
+}
+
+// Rotación automática cada 5 segundos
+function startRotation() {
+  setInterval(() => {
+    assignments.forEach(a => {
+      a.currentIdx = (a.currentIdx + 1) % imagePool.length;
+      const newId = imagePool[a.currentIdx];
+      // Fade transition
+      a.card.style.transition = 'opacity 0.5s';
+      a.card.style.opacity = '0';
+      setTimeout(() => {
+        setCardImage(a.card, newId);
+        a.card.style.opacity = '1';
+      }, 500);
+    });
+  }, 5000);
+}
+
+loadDriveImages();
+
+
+  document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.cat-group').forEach(g => g.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + tabId).classList.add('active');
+}
+
+// Reveal on scroll
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Filter products
+function filterP(btn, cat) {
+  document.querySelectorAll('.fb').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pc').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+// Toggle brand sections
+function toggleBrand(header) {
+  const section = header.parentElement;
+  section.classList.toggle('open');
+}
+
+// WA form
+function sendWA() {
+  const name = document.querySelector('.fi').value || 'Cliente';
+  const interest = document.querySelector('.fsel').value || 'el catálogo';
+  const msg = document.querySelector('.fta').value || '';
+  const text = encodeURIComponent(`Hola! Soy ${name} y me interesa: ${interest}. ${msg}`);
+  window.open(`https://wa.me/526143211542?text=${text}`, '_blank');
+}
+
+// Mobile menu
+function toggleMenu(btn) {
+  const links = document.querySelector('.nav-links');
+  const open = links.style.display === 'flex';
+  links.style.display = open ? '' : 'flex';
+  if (!open) {
+    Object.assign(links.style, {
+      position:'fixed', top:'68px', left:'0', right:'0',
+      background:'rgba(14,11,11,0.97)', flexDirection:'column',
+      padding:'30px 6vw', gap:'22px',
+      borderBottom:'1px solid rgba(255,255,255,0.07)'
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.style.display = ''; 
+    }, { once: true }));
+  }
+}
+</script>
+</body>
+</html>
